@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="
+        http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+    <changeSet id="JT-1" author="3">
+        <createTable tableName="hibernate_sequence">
+            <column name="next_val" type="bigint" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="JT-2" author="3">
+        <insert tableName="hibernate_sequence">
+            <column name="next_val" valueNumeric="0"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
