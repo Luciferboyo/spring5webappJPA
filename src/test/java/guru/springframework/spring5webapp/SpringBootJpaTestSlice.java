@@ -28,12 +28,12 @@ public class SpringBootJpaTestSlice {
     @Commit
     @Order(1)
     @Test
-    public void testMySQL(){
+    public void testMySQL() {
 
         long countBefore = bookRepository.count();
 
-        bookRepository.save(new Book("hello","ok","boyo"));
-        bookRepository.save(new Book("world","no","boyo"));
+        bookRepository.save(new Book("hello", "ok", "boyo", null));
+        bookRepository.save(new Book("world", "no", "boyo", null));
 
         long countAfter = bookRepository.count();
 
